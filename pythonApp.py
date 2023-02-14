@@ -19,7 +19,7 @@ continue_flag = tk.BooleanVar()
 continue_flag.set(False)
 
 
-
+#gets the questions from the API and saves it to a list
 def get_question(num_questions=1):
     global session_token
     response = requests.get(f"https://opentdb.com/api.php?amount={num_questions}")
@@ -39,7 +39,8 @@ def get_question(num_questions=1):
         questions.append([question, choices, correct_answer])
     #print(questions)
     return questions
-
+# prints the questions for the user to see, stops before answer is revealed
+# continues after user presses enter
 def ask_question(question_list):
     global continue_flag
     continue_flag.set(False)
@@ -67,6 +68,7 @@ def ask_question(question_list):
         answer_label = tk.Label(root, text = f"Answer: {correct}")
         answer_label.pack()
 
+#sets continue flag to True and furthers the program
 def continue_program():
     global continue_flag
     continue_flag.set(True)
