@@ -12,8 +12,28 @@ import tkinter as tk
 
 #session_token = None
 #&token={session_token
+
+
+class TriviaFrame(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.master= master
+        self.pack()
+
+        self.quit_flag = False
+        quit_button = tk.Button(self, text='Quit', command=self.quit_loop)
+        quit_button.place(relx=1.0, rely=1.0, anchor='se')
+    
+    def quit_loop(self):
+        self.quit_flag = True
+        self.master.destroy()
+
+
+
 root = tk.Tk()
 root.title('Trivia Game')
+
+trivia_frame = TriviaFrame(root)
 
 continue_flag = tk.BooleanVar()
 continue_flag.set(False)
@@ -68,12 +88,25 @@ def ask_question(question_list):
         answer_label = tk.Label(root, text = f"Answer: {correct}")
         answer_label.pack()
 
+        next_button = tk.Button(root, text = "Next Question", command = continue_program)
+        next_button.pack()
+        
+        root.wait_variable(continue_flag)
+        
+        continue_button.destroy()
+        next_button.destroy()
+        question_label.destroy()
+        choices_label.destroy()
+        see_answer.destroy()
+        answer_label.destroy()
+
+
+        
+
 #sets continue flag to True and furthers the program
 def continue_program():
     global continue_flag
     continue_flag.set(True)
-
-
 
 def mainloop():
 
@@ -86,18 +119,15 @@ def mainloop():
 
         question_list = get_question(num_questions)
         ask_question(question_list)
-
+    
     get_question_label = tk.Label(root, text = "How many trivia questions would you like? ")
     get_question_label.pack()
 
     num_questions_entry = tk.Entry(root)
     num_questions_entry.pack()
-        
-    continue_button = tk.Button(root, text="ENTER", command=begin_questions)
-    continue_button.pack()
-    
-    
 
+    continue_button = tk.Button(root, text="ENTER", command=begin_questions)
+    continue_button.pack()    
     root.mainloop()
     
 if __name__ == "__main__":
