@@ -13,7 +13,7 @@ import tkinter as tk
 #session_token = None
 #&token={session_token
 
-
+"""
 class TriviaFrame(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
@@ -27,13 +27,13 @@ class TriviaFrame(tk.Frame):
     def quit_loop(self):
         self.quit_flag = True
         self.master.destroy()
-
+"""
 
 
 root = tk.Tk()
 root.title('Trivia Game')
 
-trivia_frame = TriviaFrame(root)
+#trivia_frame = TriviaFrame(root)
 
 continue_flag = tk.BooleanVar()
 continue_flag.set(False)
