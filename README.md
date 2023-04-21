@@ -1,7 +1,5 @@
 # Overview
 
-# Overview
-
 This is a basic trivia app that asks how many questions you would like and then through a button click, it proceeds to the first question. The program waits for your next button click to show you the answer and then another click to move on the next question. This happens untill all questions have been asked. 
 
 The main purpose of this project was to practice writing in python as well as implementing a GUI. 
