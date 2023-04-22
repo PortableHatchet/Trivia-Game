@@ -6,7 +6,7 @@ The main purpose of this project was to practice writing in python as well as im
 
 {Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Trivia Game Demo Video](https://youtu.be/Dgr5payr3aE)
 
 # Development Environment
 
